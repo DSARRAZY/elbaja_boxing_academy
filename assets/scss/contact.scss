@@ -1,0 +1,63 @@
+.contact-body{
+    font-family: "Graduate";
+    background-color:$secondary-color;
+}
+
+.contact_img_detail{
+    width:30em;
+}
+
+.contact_form{
+    color:$primary-color;
+    padding:10em;
+}
+
+#contact{
+    margin-top: initial;
+    color:$primary-color;
+}
+
+.contact_page_edit_title{
+    color: #18f20b;
+    margin: 30px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 1198px) and (max-width: 1198px) {
+    .contact_page_edit_title{
+        margin: 35px;
+    }
+}
+
+@media only screen and (min-width: 1199px) and (max-width: 1246px) {
+    .contact_page_edit_title{
+        margin:50px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .contact_page_edit_title{
+        margin:0px;
+    }
+
+    form {
+        width: 20em;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .contact_img_detail{
+        display:none;
+    }
+
+    form {
+        width: 20em;
+    }
+
+    .contact_form{
+        display: grid;
+        justify-items: center;
+        justify-content: center;
+        text-justify:center;
+    }
+}

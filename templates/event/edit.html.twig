@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Event{% endblock %}
+
+{% block body %}
+    <section class="event_page_edit text-white">
+        <h1 class="event_page_edit_title">Modifier un évènement</h1>
+        <div class="event_edit_container container">
+            
+            {{ include('event/_form.html.twig', {'button_label': 'Modifier'}) }}
+            <a class="btn btn-light" href="{{ path('event_poster_index', { 'id' : event.id }) }}">Modifier l'image</a>
+            {{ include('event/_delete_form.html.twig') }}
+            
+            <a class="btn btn-light" href="{{ path('event_index') }}">Retour</a>
+        </div>
+    </section>
+{% endblock %}

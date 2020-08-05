@@ -1,0 +1,33 @@
+.mentionlegal {
+    font-family: "Graduate";
+    background-color:$secondary-color;
+    padding-bottom: 20px;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    text-justify:center;
+}
+
+.mention_title {
+    background-color: black;
+}
+
+.mentionlegal h2 {
+    text-align: center;
+    align-content: center;
+    color:#D9B44A;
+    padding-top: 50px;
+}
+
+.mentionlegal p {
+    color: white;
+}
+
+.mentionlegal h3 {
+    color:#D9B44A;
+}
+
+.mentionlegal_content {
+    margin: 20px;
+    width : 80%;
+}

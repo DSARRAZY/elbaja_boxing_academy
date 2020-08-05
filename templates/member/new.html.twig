@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New member{% endblock %}
+
+{% block body %}
+    <section class="member_page_new text-white">
+        <div class="member_show_container container">
+            <h1 class="member_page_new_title">Création d'un nouveau membre</h1>
+
+            {{ include('member/_form.html.twig') }}
+            
+            <a class="btn btn-light" href="{{ path('member_index') }}">Retour</a>
+        </div>
+    </section>
+{% endblock %}

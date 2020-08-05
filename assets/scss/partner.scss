@@ -1,0 +1,164 @@
+/* INDEX LIST OF PARTNER */
+
+.partner {
+    font-family: "Graduate";
+    background-color: #ffff;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding: 3em;
+    min-height: 1000px;
+}
+
+.partner_page {
+    background-color: #ffff;
+    padding : 1em;
+    text-align:center;
+    color:$primary-color;
+}
+
+.partner_title {
+    text-align: center;
+}
+
+.partner_deck {
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 100px;
+}
+
+.partner_card {
+    max-width: 100%;
+    margin: 0 auto;
+    width: 120px;
+}
+
+.partner_image {
+    width: 100%;
+    height: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* PAGE NEW PARTNER */
+
+.partner_page_new,
+.partner_page_form {
+    font-family: "Graduate";
+    background-image: url("../images/backgroundEBA.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 150px;
+    min-height: 1000px;
+}
+
+.partner_page_new_title{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 30px;
+    color: $primary-color;
+}
+
+.partner_page_title {
+    margin-top: 5px;
+    color: $primary-color;
+    text-align: center;
+}
+
+.partner_form{
+    color: $primary-color;
+}
+
+.partner_link {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: auto;
+    padding: 2em;
+}
+
+.partner_edit {
+    position: absolute;
+    left: 5%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.partner_show {
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 992px) {
+    .partner_page_title {
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+    .partner_deck {
+        padding-top: 125px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+    .partner_card_image {
+        width: 100%;
+        height: 500px;
+        width: 100%;
+        margin: 0 auto;
+        transition: transform .5s;
+    }
+
+    .partner_card_image:hover {
+        position: relative;
+        z-index: 1000;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+    .partner_edit {
+        visibility: hidden;
+    }
+
+    .partner_show {
+        visibility: hidden;
+    }
+
+    .partner_card_image:hover .event_edit {
+        visibility: visible;
+        margin-left: 40px;
+        border-radius: 5px;
+    }
+
+    .partner_card_image:hover .event_show {
+        visibility: visible;
+        margin-right: 40px;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1247px) {
+    .partner_page_new_title{
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .partner_page_new_title{
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 992px) {
+    .partner_page_new_title{
+        margin-top: 0px
+    }
+}

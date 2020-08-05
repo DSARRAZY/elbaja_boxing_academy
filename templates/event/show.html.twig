@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event{% endblock %}
+
+{% block body %}
+    <section class="event_show_body text-white">
+        <div class="event_show_page">
+            <h1 class="event_show_page_title">{{ event.name }}</h1>
+        </div>
+        <div class="event_show_content d-flex">
+        {% if event.poster is not empty %}
+            <img class="col-12 col-lg-4" src="{{ asset ('/images/' ~ event.poster.slug ) }}" />
+        {% endif %}
+            <div class="event_show_text text-justify">
+                <p>{{ event.description }}</p>
+                <p>Date : {{ event.startDate ? event.startDate|localizeddate('none', 'none',null ,null , 'EEEE dd MMMM yyyy') }}</p>
+                {% if event.endDate is not empty %}
+                <p>Fin : {{ event.endDate ? event.endDate|localizeddate('none', 'none',null ,null , 'EEEE dd MMMM yyyy') }}<p>
+                {% endif %}
+                {% if event.startDate is not empty %}
+                <p>Horaire : {{ event.startDate ? event.startDate|date('H\\Hi') : '' }}</p>
+                {% endif %}
+                {% if event.location is not empty %}
+                <p>Lieu : {{ event.location }}<p>
+                {% endif %}
+            </div>
+        </div>
+            <a class="btn btn-light" href="{{ path('event_index') }}">Retour</a>
+            {% if app.user %}
+                <a class="btn btn-success" href="{{ path('event_edit', {'id': event.id}) }}">Modifier</a>
+            {% endif %}
+            {% if app.user %}
+                {{ include('event/_delete_form.html.twig') }}
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

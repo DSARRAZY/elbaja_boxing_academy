@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block Title %}Contactez Nous{% endblock %}
+
+{% block body %}
+<div class="contact-body">
+    <h1 class="contact_page_edit_title">Contactez Nous</h1>
+        <div class="container contact_box">
+            <div class="row justify-content-start">
+                <div class="contact_img col-4">
+                    <img class="contact_img_detail" src="{{ asset('build/contact/contact_boxe.jpg') }}">
+                </div>
+                <div class="contact_form col-md-8">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button class="btn btn-success">{{ button_label|default('Envoyer') }}</button>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+</div>
+
+{% endblock %}
+
+

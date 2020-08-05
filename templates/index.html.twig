@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+
+ {% block body %}
+     <!-- start banner Area -->
+     <section class="banner-area relative">
+         <div class="overlay overlay-bg"></div>
+         <div class="container">
+             <div class="row fullscreen d-flex align-items-center justify-content-between">
+                     <h1 class="ml15 text-center">
+                         <span class="word">Elbaja</span>
+                         <span class="word">Boxing</span>
+                         <span class="word">Academy</span>
+                     </h1>
+             </div>
+         </div>
+     </section>
+     <!-- End banner Area -->
+     <!-- ChoseUs Section Begin -->
+     <section class="choseus-section spad">
+         <div class="container">
+             <div class="row">
+                 <div class="col-lg-12">
+                     <div class="section-title">
+                         <span>Pourquoi nous choisir ?</span>
+                         <h2 class="choseus_h2">REPOUSSEZ VOS LIMITES</h2>
+                     </div>
+                 </div>
+             </div>
+             <div class="row">
+                 <div class="col-lg-3 col-sm-6">
+                     <div class="cs-item">
+                         <span class="fa fa-bolt fa-3x"></span>
+                         <h4>Boxe Anglaise</h4>
+                         <h4>MMA</h4>
+                     </div>
+                 </div>
+                 <div class="col-lg-3 col-sm-6">
+                     <div class="cs-item">
+                         <span class="fa fa-sign-language fa-3x"></span>
+                         <h4>Kick Boxing</h4>
+                         <h4>Cardio Boxing</h4>
+                     </div>
+                 </div>
+                 <div class="col-lg-3 col-sm-6">
+                     <div class="cs-item">
+                         <span class="fa fa-heartbeat fa-3x"></span>
+                         <h4>Cardio Training</h4>
+                         <h4>Coaching</h4>
+                     </div>
+                 </div>
+                 <div class="col-lg-3 col-sm-6">
+                     <div class="cs-item">
+                         <span class="fa fa-users fa-3x"></span>
+                         <h4>Hommes / Femmes</h4>
+                         <h4>Enfants</h4>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+     <!-- ChoseUs Section End -->
+     <!-- President -->
+<section class="president_section">
+    <div class="container">
+         <div class="row justify-content-center">
+             <div class="col-md-12 col-md-offset-2">
+                 <div class="quote-card">
+                     <div class="quote-marks">“</div>
+                     <div class="quote">
+                         <div class="quote-text text-justify">
+                             L’association ELBAJA BOXING ACADEMY DE TOURS DES FONTAINES a été créée en 2000
+                             dans l’objectif et l'idée de promouvoir le sport, en particulier la boxe, au sein du quartier des Fontaines dans l’esprit du «vivre ensemble ».
+                             <a class="president_link" href="{{ path('association_index') }}">en savoir plus...</a>
+                         </div>
+                     </div>
+                     <div class="quote-profile clearfix">
+                         <div class="quote-author-image"><img src="{{ asset('build/home/photo_president.jpg') }}" alt="president image" />
+                         </div>
+                         <div class="quote-author-name"> James ELBAJA
+                             <span class="quote-author-info">Président ELBAJA BOXING CLUB</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+</section>
+     <!-- President Section End -->
+     <!-- Prince of Ring part here -->
+     <section class="prince_member section_padding">
+         <div class="container">
+             <div class="row justify-content-center">
+                 <div class="col-lg-7">
+                     <div class="prince_member_text">
+                         <h2 class="prince_h2">Vivez l'évenement des Princes du Ring !</h2>
+                         <a target="_blank" href="https://www.youtube.com/results?search_query=les+princes+du+ring+tours" class="btn_1">Suivez-nous</a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+     <!-- Prince of Ring end -->
+     <!-- Trainers -->
+<section class="trainers-section" id="trainers">
+         <div class="container">
+             <h1 class="trainers_h1">RENCONTREZ NOS ENTRAINEURS</h1>
+             <h3 class="trainers_h3">A votre écoute, ils sauront vous faire progresser</h3>
+
+            <div class="row trainers-ctn">
+            {% for member in members %}
+                {% if member.poster is not empty %}
+                <div class="trainer trainer-all" style="background-image: url({{ asset ('/images/' ~ member.poster.slug) }});">
+                    <div class="overlay">
+                        <div class="trainer-details">
+                            <h3 class="trainers_details_h3">{{ member.firstname }} {{ member.lastname }}</h3>
+                            <span>{{ member.description }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+
+            </div>
+        </div>
+</section>
+<!--End Trainers -->
+<!-- Join Us-->
+     <div class="cta">
+         <div class="container">
+             <div class="row">
+                 <div class="col">
+                     <div class="cta_content text-center">Réservez <a target="_blank" href="https://ebacorporation.youcanbook.me"><span id="cours">un cours</span></a> !</div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!--End Join Us-->
+ {% endblock %}

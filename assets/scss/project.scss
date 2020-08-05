@@ -1,0 +1,99 @@
+/*---------------------
+       Project
+-----------------------*/
+
+.project_section {
+    font-family:"Graduate";
+    background: $secondary-color;
+}
+
+.project_page_show{
+    font-family: "Graduate";
+    background-image: url("../images/backgroundEBA.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding : 3em;
+}
+
+.project_page_new,
+.project_page_edit {
+    font-family: "Graduate";
+    background-image: url("../images/backgroundEBA.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 150px;
+}
+
+.project_page_new_title,
+.project_page_edit_title,
+.project_h1 {
+    background-color: black;
+    text-align: center;
+    margin-top: 5px;
+    color: $primary-color;
+    font-size: 25px;
+}
+
+@media only screen and (min-width: 992px) {
+    .project_page_new_title,
+    .project_page_edit_title,
+    .project_h1 {
+        margin-top: 32px;
+        font-size: 40px;
+    }
+}
+
+.project_page_new_title,
+.project_page_edit_title {
+    color: $primary-color;
+}
+
+.project_card {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.project_title, .project_text {
+    text-align: center;
+    font-size: 40px;
+}
+
+.project_image {
+    width: 100%;
+    height: 1200px;
+    margin: 0 auto;
+}
+
+.project_link {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+
+.project_edit {
+    position: absolute;
+    font-size: 40px;
+    left: 5%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+// project/_form.html.twig
+
+.project_form label,
+.project_form input[type="text"],
+.project_form input[type="date"],
+.project_form fieldset,
+.project_form button,
+.project_form select,
+.project_form textarea,
+.project_page_new a,
+.project_page_edit a,
+.project_delete,
+.project_form fieldset {
+    font-size: initial;
+}

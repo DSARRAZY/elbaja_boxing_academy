@@ -1,0 +1,223 @@
+/*---------------------
+       Press
+-----------------------*/
+
+.press_section{
+    min-height: 1500px;
+    background: url(../images/press/press_boxe.jpg) fixed;
+    background-size: cover;
+    font-family: "Graduate";
+    padding: 3em;
+}
+
+.press_title{
+    color : white;
+    text-align :center;
+}
+
+.services p{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    text-transform: uppercase;
+    font-size: 17px;
+    line-height: 22px;
+    color: #737373;
+}
+
+.press_row {
+    margin-top:70px;
+}
+
+.press_h3 {
+    margin-top:70px;
+}
+
+.services press_h1 span:before {
+    content: '/';
+    padding-right: 10px;
+    font-weight: 100;
+}
+
+.services press_h1 span:before {
+    color: #e600ff;
+}
+
+.services press_h1 span:after {
+    content: '/';
+    padding-left: 10px;
+    font-weight: 100;
+}
+
+.services press_h1 span:after {
+    color: #e600ff;
+}
+
+.box-a {
+    background: rgba(41, 41, 41, 0.7);
+    color: #ddd;
+    padding: 20px 20px 20px 20px;
+    float: right;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.box-a:before{
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-bottom: 15px solid #191919;
+    border-left: 15px solid #323232;
+    -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+    -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+    display: block; width: 0;
+}
+
+.box-a.rounded {
+    -moz-border-radius: 5px 0 5px 5px;
+    border-radius: 5px 0 5px 5px;
+}
+
+.box-a.rounded:before {
+    border-width: 8px;
+    border-color: #323232 #323232 transparent transparent;
+    -moz-border-radius: 0 0 0 5px;
+    border-radius: 0 0 0 5px;
+}
+
+.box-a i{
+    font-size: 60px;
+    background: #323232;
+    padding: 25px;
+    border-radius: 150px;
+}
+
+.box-a press_h3{
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    text-align: left;
+    padding-bottom: 10px;
+    margin: 0;
+    color: #e600ff;
+}
+
+.box-a p{
+    float: left;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 14px;
+}
+
+.box-a:hover i {
+    background: #e600ff;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+}
+
+@media only screen and (max-width : 500px) {
+    .press_social{
+        display: grid;
+        justify-items: center;
+        justify-content: center;
+        text-justify:center;
+  }
+}
+
+
+/* ICON EFFECT */
+
+@-webkit-keyframes horizontal {
+    0% {
+        -webkit-transform: translate(0,0);
+        transform: translate(0,0);
+  }
+
+    6% {
+        -webkit-transform: translate(5px,0);
+        transform: translate(5px,0);
+  }
+
+    12% {
+        -webkit-transform: translate(0,0);
+        transform: translate(0,0);
+  }
+
+    18% {
+        -webkit-transform: translate(5px,0);
+        transform: translate(5px,0);
+  }
+
+    24% {
+        -webkit-transform: translate(0,0);
+        transform: translate(0,0);
+  }
+
+    30% {
+        -webkit-transform: translate(5px,0);
+        transform: translate(5px,0);
+  }
+
+    36% {
+        -webkit-transform: translate(0,0);
+        transform: translate(0,0);
+  }
+}
+
+@keyframes horizontal {
+    0% {
+        -webkit-transform: translate(0,0);
+        -ms-transform: translate(0,0);
+        transform: translate(0,0);
+  }
+
+    6% {
+        -webkit-transform: translate(5px,0);
+        -ms-transform: translate(5px,0);
+        transform: translate(5px,0);
+  }
+
+    12% {
+        -webkit-transform: translate(0,0);
+        -ms-transform: translate(0,0);
+        transform: translate(0,0);
+  }
+
+    18% {
+        -webkit-transform: translate(5px,0);
+        -ms-transform: translate(5px,0);
+        transform: translate(5px,0);
+  }
+
+    24% {
+        -webkit-transform: translate(0,0);
+        -ms-transform: translate(0,0);
+        transform: translate(0,0);
+  }
+
+    30% {
+        -webkit-transform: translate(5px,0);
+        -ms-transform: translate(5px,0);
+        transform: translate(5px,0);
+  }
+
+    36% {
+        -webkit-transform: translate(0,0);
+        -ms-transform: translate(0,0);
+        transform: translate(0,0);
+  }
+}
+
+.faa-horizontal.animated,
+.faa-horizontal.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-horizontal {
+    -webkit-animation: horizontal 2s ease infinite;
+    animation: horizontal 2s ease infinite;
+}

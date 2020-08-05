@@ -1,0 +1,153 @@
+/*---------------------
+      Hall of Fame
+-----------------------*/
+
+.hall_section_intro{
+    font-family:"Graduate";
+    background: $secondary-color;
+    color:$primary-color;
+    padding: 3em;
+    text-align: center;
+}
+
+#hall {
+    font-family:"Graduate";
+    background: $secondary-color;
+    background-image: url("../images/hall_of_fame/hall_of_fame.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.hall_btn:hover,
+.bhall_btn:focus {
+    background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none;
+}
+
+.hall_btn{
+    color: #fff;
+    background-color: #007b5e;
+    border-color: #007b5e;
+}
+
+.hall_section {
+    padding: 60px 0;
+    min-height: 1000px;
+}
+
+.hall_section .hall_title {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#hall .hall_card {
+    border: none;
+    background: #ffffff;
+}
+
+.hall_image:hover .hall_backside,
+.hall_image.hover .hall_backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.hall_image:hover .hall_frontside,
+.hall_image.hover .hall_frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.hall_mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.hall_frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.hall_backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.hall_frontside,
+.hall_backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.hall_frontside .hall_card,
+.hall_backside .hall_card {
+    min-height: 312px;
+}
+
+.hall_backside .hall_card hall_social {
+    font-size: 18px;
+    color: #007b5e !important;
+}
+
+.hall_frontside .hall_card .hall_card_name,
+.hall_backside .hall_card .hall_card_name {
+    color: #007b5e !important;
+}
+
+.hall_frontside .hall_card .hall_card-body hall_img_card {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.hall_card img {
+    height: 400px;
+}
+
+.hall_card_body {
+    height: 500px;
+}

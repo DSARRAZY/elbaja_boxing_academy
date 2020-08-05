@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event index{% endblock %}
+
+{% block body %}
+
+    <section class="event text-white">
+        <div class="event_page">
+            <h1 class="event_page_title">ÉVÈNEMENTS</h1>
+            <div class="event_link">
+            {% if app.user %}
+                <a class="event_btn btn btn-success" href="{{ path('event_new') }}">Créer un évènement</a>
+            {% endif %}
+            </div>
+        </div>
+        
+        <div class="event_card row justify-content-around">
+        {% for event in events %}
+            <div class="event_deck card-deck col-sm-12 col-lg-6 col-xl-4">
+                <div class="event_card card bg-dark text-white">
+                    <div class="event_body card-body">
+                        <h3 class="event_title card-title">{{ event.name }}</h3>
+                        <p class="event_text card-text">{{ event.startDate ? event.startDate|localizeddate('none', 'none',null ,null , 'EEEE dd MMMM yyyy') }}</p>
+                    </div>
+                    <div class="event_card_image">
+                    {% if event.poster is not empty %}
+                        <a class="event_link_image" href="{{ path('event_show', {'id': event.id}) }}"><img class="event_image card-img-top" src="{{ asset ('/images/' ~ event.poster.slug) }}" alt="Card image cap"  title="Cliquer sur l'image pour en savoir plus !" /></a>
+                    {% endif %}
+                        <a class="event_show btn btn-success" href="{{ path('event_show', {'id': event.id}) }}">en savoir plus !</a>
+                    {% if app.user %}
+                        <a class="event_edit btn btn-success" href="{{ path('event_edit', {'id': event.id}) }}">modifier</a>
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% else %}
+                <p class="event_p"colspan="7">no records found</p>
+        {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

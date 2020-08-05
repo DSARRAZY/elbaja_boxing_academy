@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Premier administrateur{% endblock %}
+
+{% block body %}
+<section class="register_section">
+    <h1 class="register_section_title">Veuillez saisir le premier administrateur</h1>
+    <h2 class="register_section_warning">Conseils pour un mot de passe sécurisé :
+        utiliser des lettres majuscules, minuscules, des chiffres, des caractères spéciaux.</h1>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="register_section_button btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+    {{ form_end(form) }}
+</section>
+{% endblock %}

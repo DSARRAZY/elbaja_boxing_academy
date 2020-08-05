@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All Poster{% endblock %}
+
+{% block body %}
+    <section class="poster_index">
+        <div class="poster_title">
+            <h1>Medias</h1>
+            <div class="poster_link d-flex justify-content-end">
+            {% if app.user %}
+                <a class="poster_btn btn btn-success" href="{{ path('poster_new') }}">Ajouter une image</a>
+            {% endif %}
+            </div>
+        </div>
+        <div class="poster_div d-flex justify-content-center row">
+        {% for poster in posters %}
+            {% if poster.members is empty or app.user %}
+            <div class="poster_figure">
+                <figure class="d-flex flex-column col-xs-12 col-lg-6 col-xl-12">
+                    <img src="{{ asset ('/images/' ~ poster.slug) }}" />
+                    <figcaption class="d-flex justify-content-center align-items-center">{{ poster.fileName }}</figcaption>
+                    {% if app.user %}
+                        {{ include('poster/_delete_form.html.twig') }}
+                    {% endif %}
+                </figure>
+            </div>
+            {% endif %}
+        {% else %}
+            <p class="poster_p text-white" colspan="7">no records found</p>
+        {% endfor %}
+        </div>
+    </section>
+{% endblock %}

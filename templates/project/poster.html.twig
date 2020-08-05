@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All Poster for project{% endblock %}
+
+{% block body %}
+    <section class="poster_index">
+        <div class="poster_title">
+            <h1>Images</h1>
+        </div>
+        <div class="poster_link">
+        {% if app.user %}
+            <a class="poster_btn btn btn-success" href="{{ path('project_add_poster', {'project' : project.id}) }}">Ajouter une image</a>
+        {% endif %}
+        </div>
+        <div class="poster_div d-flex justify-content-center row">
+        {% for poster in posters %}
+            <div class="poster_figure">
+                <figure class="d-flex flex-column col-xs-12 col-lg-6 col-xl-12">
+                    <img src="{{ asset ('/images/' ~ poster.slug) }}" />
+                    <figcaption class="d-flex justify-content-center align-items-center">{{ poster.fileName }}</figcaption>
+                    <a class="poster_btn btn btn-success" href="{{ path('project_new_poster', {'project' : project.id, 'poster' : poster.id}) }}">Ajouter cette image</a>
+                </figure>
+            </div>
+        {% else %}
+        </div>
+            <p class="poster_p text-white" colspan="7">no records found</p>
+        {% endfor %}
+        
+    </section>
+{% endblock %}

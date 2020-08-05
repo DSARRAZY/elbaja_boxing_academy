@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer un projet{% endblock %}
+
+{% block body %}
+    <section class="project_page_edit text-white">
+        <h1 class="project_page_edit_title">Modifier un projet</h1>
+        <div class="project_edit_container container">
+            
+            {{ include('project/_form.html.twig', {'button_label': 'Modifier'}) }}
+            <a class="btn btn-light" href="{{ path('project_poster_index', { 'id' : project.id }) }}">Modifier l'image</a>
+            {{ include('project/_delete_form.html.twig') }}
+
+            <a class="btn btn-lg active" href="{{ path('project_index') }}">Retour</a>
+        </div>
+    </section>
+{% endblock %}
+

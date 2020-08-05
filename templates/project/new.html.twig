@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau projet{% endblock %}
+
+{% block body %}
+    <section class="project_page_new text-white">
+        <h1 class="project_page_new_title">Création d'un nouveau projet</h1>
+        <div class="project_show_container container">
+
+            {{ include('project/_form.html.twig') }}
+
+            <a class="btn btn-lg active" href="{{ path('project_index') }}">Retour</a>
+        </div>
+    </section>
+{% endblock %}

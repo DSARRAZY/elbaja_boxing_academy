@@ -1,0 +1,102 @@
+.poster_index,
+.poster_page_new {
+    font-family: "Graduate";
+    background-image: url("../images/backgroundEBA.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 50px;
+    overflow: hidden;
+    min-height: 1000px;
+}
+
+.poster_title {
+    background-color: black;
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: 50px;
+}
+
+.poster_title h1 {
+    padding-top: 50px;
+}
+
+.poster_link {
+    margin-right: 4%;
+}
+
+.poster_div {
+    margin: auto;
+}
+
+.poster_figure {
+    margin: 5px;
+}
+
+.poster_figure figure {
+    animation-duration: 3s;
+    animation-name: slidein;
+    border: $primary-color solid;
+    margin: auto;
+    margin-bottom: 10px;
+    min-width: 350px;
+    max-width: 350px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    @keyframes slidein {
+        from {
+            margin-left: 200%;
+            width: 300%;
+        }
+
+        to {
+            margin-left: 0%;
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+    @keyframes slidein {
+        from {
+            margin-left: 500%;
+            width: 300%;
+        }
+
+        to {
+            margin-left: 0%;
+            width: 100%;
+        }
+    }
+}
+
+.poster_figure img {
+    height: 400px;
+}
+
+.poster_figure figcaption {
+    height: 50px;
+    background-color:#222;
+    color:#fff;
+    text-align: center;
+}
+
+.poster_page_new {
+    padding-top: 70px;
+}

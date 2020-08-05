@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des partenaires{% endblock %}
+
+{% block body %}
+    <section class="partner">
+        <h1 class="partner_page">PARTENAIRES</h1>
+        <div class="event_link">
+            {% if app.user %}
+                <a class="partner_btn btn btn-success" href="{{ path('partner_new') }}">Créer un partenaire</a>
+            {% endif %}
+        </div>
+        <div class="row justify-content-around">
+        {% for partner in partners %}
+            <div class="partner_deck d-flex card-deck col-xs-12 col-md-6 col-xl-4">
+                <div class="partner_card card bg-white text-dark h-100">
+                    <div class="partner_body card-body">
+                        <h3 class="partner_title card-title">{{ partner.name }}</h3>
+                    </div>
+                    <div class="partner_card_image">
+                    {% if partner.poster is not empty %}
+                        <a class="partner_link_image"><img class="partner_image card-img-top" src="{{ asset ('/images/' ~ partner.poster.slug) }}" alt="Card image cap"  title="Cliquer sur l'image pour en savoir plus !" /></a>
+                    {% else %}
+                        <a class="btn btn-success" href="{{ path('partner_poster_index', {'id': partner.id}) }}">Ajouter une image</a>
+                    {% endif %}
+                    {% if app.user %}
+                        {{ include('partner/_delete.html.twig') }}
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% else %}
+                <p class="partner_p"colspan="7">Pas de données à afficher</p>
+        {% endfor %}
+        </div>
+    </section>
+{% endblock %}

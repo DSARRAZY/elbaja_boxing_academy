@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Project index{% endblock %}
+
+{% block body %}
+<section class="project_section">
+    <h1 class="project_h1"><i class="fa fa-star" aria-hidden="true"></i> Nos projets <i class="fa fa-star" aria-hidden="true"></i></h1>
+    {% if app.user %}
+    <div class="d-flex justify-content-end">
+        <a class="btn btn-primary" href="{{ path('project_new') }}">Créer</a>
+    </div>
+    {% endif %}
+        <div class="project_all row justify-content-around">
+        {% for project in projects %}
+            <div class="project_deck card-deck col-xs-12 col-md-6 col-xl-4 mt-5">
+                <div class="project_card card bg-dark text-white">
+                {% if project.poster is not empty %}
+                    <img class="project_img card-img-top" src="{{ asset ('/images/' ~ project.poster.slug) }}" alt="Image du projet">
+                {% endif %}
+                    <div class="project_body card-body">
+                        <h5 class="project_title card-title">{{ project.name }}</h5>
+                        <p class="project_description card-text">{{ project.description }}</p>
+                    </div>
+                    <div class="project_footer card-footer">
+                        <small class="project_text_footer text-white">Date de début : {{ project.dateStart ? project.dateStart|date('d-m-Y') : '' }}</small>
+                        <small class="project_text_footer text-white">Date de fin : {{ project.dateEnd ? project.dateEnd|date('d-m-Y') : '' }}</small>
+                        <hr>
+                        <a class="btn btn-success" href="{{ path('project_show', {'id': project.id}) }}">En savoir plus !</a>
+                        {% if app.user %}
+                            <a class="btn btn-warning" href="{{ path('project_edit', {'id': project.id}) }}">Editer</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <p colspan="7">no records found</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

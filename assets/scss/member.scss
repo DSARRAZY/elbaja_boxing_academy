@@ -1,0 +1,67 @@
+.member_index,
+.member_page_new,
+.member_page_edit {
+    font-family: "Graduate";
+    background-image: url("../images/backgroundEBA.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 50px;
+    overflow: hidden;
+    min-height: 1000px;
+}
+
+.member_title {
+    background-color: black;
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: 50px;
+}
+
+.member_title h1 {
+    padding-top: 50px;
+}
+
+.member_figure h2 {
+    font-size: 25px;
+}
+
+.member_link {
+    margin-right: 4%;
+}
+
+.member_div {
+    margin: auto;
+}
+
+.member_figure {
+    margin: 5px;
+}
+
+.member_figure figure {
+    animation-duration: 3s;
+    border: $primary-color solid;
+    margin: auto;
+    margin-bottom: 10px;
+    min-width: 350px;
+    max-width: 350px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.member_figure img {
+    height: 400px;
+}
+
+.member_figure figcaption {
+    height: 50px;
+    background-color:#222;
+    color:#fff;
+    text-align: center;
+}
+
+.member_page_new,
+.member_page_edit {
+    padding-top: 70px;
+}

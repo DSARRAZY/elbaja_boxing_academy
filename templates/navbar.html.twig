@@ -1,0 +1,94 @@
+<header>
+    <nav class="navbar navbar-expand-xl py-4 shadow-sm fixed-top">
+        <a href="{{ path('home_index') }}" class="navbar-brand font-weight-bold mr-auto">
+            <img src="{{ asset('build/logoEBA.jpg') }}" alt="logo EBC" class="d-inline-block align-middle mr-2" id="logoEBC">
+        <span class="text-uppercase font-weight-bold" id="nav_title">Elbaja Boxing Club</span>
+        </a>
+        <div id="navbarContent" class="collapse navbar-collapse order-sm-12 order-lg-1">
+            <ul class="navbar-nav ml-auto">
+                <!-- Megamenu-->
+                <li class="nav-item dropdown megamenu"><a id="dropdownMenuButton" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle font-weight-bold text-uppercase">Menu</a>
+                    <div aria-labelledby="dropdownMenuButton" class="dropdown-menu border-0 p-0 m-0">
+                        <div class="container-fluid">
+                            <div class="row text-light rounded-0 m-0 shadow-sm">
+                                <div class="col-12">
+                                    <div class="p-4">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-lg-3 mb-4">
+                                                <h6 class="font-weight-bold text-uppercase">PROJETS</h6>
+                                                <ul class="list-unstyled">
+                                                    <li class="nav-item"><a href="{{ path('project_index') }}" class="nav-link text-small pb-0">DECOUVRIR</a></li>
+                                                    {% if app.user %}
+                                                        <li class="nav-item"><a href="{{ path('project_new') }}" class="nav-link text-small pb-0 ">AJOUTER</a></li>
+                                                    {% endif %}
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-6 col-lg-3 mb-4">
+                                                <h6 class="font-weight-bold text-uppercase">NOS HEROS</h6>
+                                                <ul class="list-unstyled">
+                                                    <li class="nav-item"><a href="{{ path('hall_index') }}" class="nav-link text-small pb-0 ">DECOUVRIR</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-3 mb-4">
+                                                <h6 class="font-weight-bold text-uppercase">MEDIAS</h6>
+                                                <ul class="list-unstyled">
+                                                    <li class="nav-item"><a href="{{ path('poster_index') }}" class="nav-link text-small pb-0 ">DECOUVRIR</a></li>
+                                                {% if app.user %}
+                                                    <li class="nav-item"><a href="{{ path('poster_new') }}" class="nav-link text-small pb-0 ">AJOUTER</a></li>
+                                                {% endif %}
+                                                </ul>
+                                            </div>
+
+                                            <div class="col-sm-6 col-lg-3 mb-4">
+                                                <h6 class="font-weight-bold text-uppercase">ACTIVITES</h6>
+                                                <ul class="list-unstyled">
+                                                    <li class="nav-item"><a href="{{ path('activity_index') }}" class="nav-link text-small pb-0 ">DECOUVRIR</a></li>
+                                                    <li class="nav-item"><a href="{{ path('press_index') }}" class="nav-link text-small pb-0 ">ON PARLE DE NOUS</a></li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="{{ path('association_index') }}" class="nav-link font-weight-bold text-uppercase">Association</a></li>
+                <li class="nav-item"><a href="{{ path('event_index') }}" class="nav-link font-weight-bold text-uppercase">Evenements</a></li>
+                <li class="nav-item"><a href="{{ path('partner_index') }}" class="nav-link font-weight-bold text-uppercase">Partenaires</a></li>
+                <li class="nav-item"><a href="{{ path('contact_index') }}" class="nav-link font-weight-bold text-uppercase">Contact</a></li>
+                {% if app.user %}
+                <li class="nav-item"><a href="{{ path('member_index') }}" class="nav-link font-weight-bold text-uppercase">Membres</a></li>
+                {% endif %}
+            </ul>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="https://fr-fr.facebook.com/ElBajaboxingAcademy/" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="https://fr-fr.facebook.com/ElBajaboxingAcademy/">
+                        <i class="fa fa-user"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
+                        {% if app.user %}
+                            <a class="dropdown-item" href="/admin/">Administration<span class="sr-only">(current)</span></a>
+                            <p class="loginUser">{{ app.user.email }}</p>
+                        {% else %}
+                            <a class="dropdown-item" href="{{ path('app_login') }}" >Connexion</a>
+                        {% endif %}
+                        {% if app.user %}
+                            <a class="dropdown-item" href="{{ path('app_logout') }}"> Se déconnecter</a>
+                        {% endif %}
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler order-md-1 custom-toggler">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+</header>

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Membres{% endblock %}
+
+{% block body %}
+<section class="member_index">
+    <div class="member_title">
+        <h1>Membres</h1>
+        <div class="member_link d-flex justify-content-end">
+        {% if app.user %}
+            <a class="member_btn btn btn-success" href="{{ path('member_new') }}">Ajouter un membre</a>
+        {% endif %}
+        </div>
+    </div>
+    <div class="member_div d-flex justify-content-center row">
+    {% for member in members %}
+        <div class="member_figure">
+            <figure class="d-flex flex-column bg-dark col-xs-12 col-lg-6 col-xl-12">
+                <h2 class="d-flex justify-content-center text-white">{{ member.lastname }} {{ member.firstname }}</h2>
+                {% if member.poster is empty %}
+                    <a class="btn btn-light btn-block"href="{{ path('member_poster_index', { 'id': member.id }) }}">Ajouter une image</a>
+                {% else %}
+                    <img src="{{ asset ('/images/' ~ member.poster.slug) }}" />
+                {% endif %}
+                    <figcaption class="d-flex justify-content-center align-items-center">{{ member.category }}</figcaption>
+                {% if app.user %}
+                    {{ include('member/_delete_form.html.twig') }}
+                    <a class="btn btn-warning btn-block"href="{{ path('member_edit', { 'id': member.id }) }}">modifier</a>
+                {% endif %}
+            </figure>
+        </div>
+    {% else %}
+        <p>Aucun membre trouvé.</p>
+    {% endfor %}
+    </div>
+    <div class="member_link d-flex justify-content-end">
+        <a class="btn btn-success" href="{{ path('home_index') }}">Retour à l'accueil</a>
+    </div>
+</section>
+{% endblock %}
